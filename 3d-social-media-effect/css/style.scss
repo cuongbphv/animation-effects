@@ -1,0 +1,142 @@
+$bg-body: #f1f1f1;
+$bg-a: #ccc;
+$bg-white: #fff;
+$text-color: #262626;
+
+.absolute-center-parent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.absolute-top-left-parent {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.full-width-height {
+    width: 100%;
+    height: 100%;
+}
+.span-class {
+    font-family: fontAwesome;
+    text-align: center;
+    line-height: 60px;
+    @extend .absolute-top-left-parent;
+    @extend .full-width-height;
+    background: $bg-white;
+    color: $text-color;
+    transition: transform 0.5s;
+}
+@mixin child-content($index, $isAfter) {
+    @if $index == 1 {
+        content: '\f09a';
+        @if $isAfter {
+            background: #3b5999;
+        }
+    }
+    @else if $index == 2 {
+        content: '\f099';
+        @if $isAfter {
+            background: #55acce;
+        }
+    }
+    @else if $index == 3 {
+        content: '\f0d5';
+        @if $isAfter {
+            background: #dd4b39;
+        }
+    }
+    @else if $index == 4 {
+        content: '\f0e1';
+        @if $isAfter {
+            background: #0077b5;
+        }
+    }
+    @else if $index == 5 {
+        content: '\f16d';
+        @if $isAfter {
+            background: #e4405f;
+        }
+    }
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: $bg-body;
+}
+ul {
+    @extend .absolute-center-parent;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    li {
+        position: relative;
+        list-style: none;
+        margin: 0 4px;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 8px;
+            background: $text-color;
+            border-radius: 50%;
+            transition: 0.5s;
+            opacity: 0;
+            filter: blur(2px);
+            transform: scale(0.8);
+        }
+        a {
+            width: 60px;
+            height: 60px;
+            display: block;
+            transition: 0.5s;
+            span {
+                @extend .full-width-height;
+                &:before {
+                    @extend .span-class;
+                    transform-origin: top;
+                }
+                &:after {
+                    @extend .span-class;
+                    transform-origin: bottom;
+                    transform: rotateX(90deg) translateY(50%);
+                }
+            }
+        }
+        &:hover {
+            &:before {
+                opacity: 1;
+                transform: scale(1);
+            }
+            a {
+                transform: translateY(-10px);
+                span {
+                    &:before {
+                        transform: rotateX(90deg) translateY(-50%);
+                    }
+                    &:after {
+                        transform: rotateX(0deg) translateY(0);
+                    }
+                }
+            }
+        }
+        @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+                a {
+                    span {
+                        &:before {
+                            @include child-content($i, false);
+                        }
+                        &:after {
+                            @include child-content($i, true);
+                            color: $bg-white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
