@@ -1,0 +1,83 @@
+$body-bg : #262626;
+$clock-border: #ff5f5f;
+$clock-bg: #fff;
+$shadow-color: #e23232;
+$top: calc(50% - 3px);
+
+body
+{
+    margin: 0;
+    padding: 0;
+    background: $body-bg;
+}
+
+span
+{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background-color: $clock-border;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+.clock
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    border: 15px solid $clock-border;
+    border-radius: 50%;
+    background: $clock-bg url(../img/clock_face.svg) no-repeat;
+    background-size: cover;
+    box-shadow: -2px 2px 0 $shadow-color, inset 0 0 20px rgba($color: #000000, $alpha: 0.5);
+}
+
+.clock::before
+{
+    content: '';
+    position: absolute;
+    top: $top;
+    left: 50%;
+    left: 50%;
+    width: 30%;
+    height: 3%;
+    background: $body-bg;
+    border-radius: 3px;
+    animation: animation-clock 4s linear infinite;
+    transform-origin: left;
+}
+
+.clock::after
+{
+    content: '';
+    position: absolute;
+    top: $top;
+    left: 50%;
+    left: 50%;
+    width: 20%;
+    height: 3%;
+    background: $body-bg;
+    border-radius: 3px;
+    animation: animation-clock 48s linear infinite;
+    transform-origin: left;
+}
+
+@keyframes animation-clock
+{
+    0%
+    {
+        transform: rotate(-90deg);
+    }
+    100%
+    {
+        transform: rotate(270deg);
+    }
+}
