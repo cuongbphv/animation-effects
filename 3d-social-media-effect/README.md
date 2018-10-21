@@ -1,12 +1,13 @@
 # 3D Social Media Effect
 
 ### Function @mixin to loop element in list
-`
+```
 /**
     brief: loop child element in list and set content for it, check if :after set background
     $index: numer of element in list
     $isAfter: check is :after or not
-*/
+**/
+
 @mixin child-content($index, $isAfter) {
     @if $index == 1 {
         content: '\f09a';
@@ -38,10 +39,12 @@
             background: #e4405f;
         }
     }
-}`
+}
+```
 
 ### To use @mixin, let use @include
-`@for $i from 1 through 5 {
+```
+@for $i from 1 through 5 {
     &:nth-child(#{$i}) {
         a {
             span {
@@ -56,4 +59,4 @@
         }
     }
 }
-`
+```
