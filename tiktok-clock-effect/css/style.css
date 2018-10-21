@@ -4,13 +4,28 @@ body {
   background: #262626;
 }
 
-span {
-  display: block;
+.clockwise, .clock:before, .clock:after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 3px);
+  left: 50%;
+  height: 3%;
+  background: #262626;
+  border-radius: 3px;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.absolute-center-parent, span, .clock {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+span {
+  display: block;
   width: 15px;
   height: 15px;
   background-color: #ff5f5f;
@@ -19,11 +34,6 @@ span {
 }
 
 .clock {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   width: 250px;
   height: 250px;
   border: 15px solid #ff5f5f;
@@ -34,36 +44,16 @@ span {
           box-shadow: -2px 2px 0 #e23232, inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-.clock::before {
-  content: '';
-  position: absolute;
-  top: calc(50% - 3px);
-  left: 50%;
-  left: 50%;
+.clock:before {
   width: 30%;
-  height: 3%;
-  background: #262626;
-  border-radius: 3px;
   -webkit-animation: animation-clock 4s linear infinite;
           animation: animation-clock 4s linear infinite;
-  -webkit-transform-origin: left;
-          transform-origin: left;
 }
 
-.clock::after {
-  content: '';
-  position: absolute;
-  top: calc(50% - 3px);
-  left: 50%;
-  left: 50%;
+.clock:after {
   width: 20%;
-  height: 3%;
-  background: #262626;
-  border-radius: 3px;
   -webkit-animation: animation-clock 48s linear infinite;
           animation: animation-clock 48s linear infinite;
-  -webkit-transform-origin: left;
-          transform-origin: left;
 }
 
 @-webkit-keyframes animation-clock {

@@ -11,13 +11,30 @@ body
     background: $body-bg;
 }
 
-span
+.clockwise
 {
-    display: block;
+    content: '';
+    position: absolute;
+    top: $top;
+    left: 50%;
+    height: 3%;
+    background: $body-bg;
+    border-radius: 3px;
+    transform-origin: left;
+}
+
+.absolute-center-parent
+{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+span
+{
+    @extend .absolute-center-parent;
+    display: block;
     width: 15px;
     height: 15px;
     background-color: $clock-border;
@@ -27,10 +44,7 @@ span
 
 .clock
 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @extend .absolute-center-parent;
     width: 250px;
     height: 250px;
     border: 15px solid $clock-border;
@@ -38,36 +52,20 @@ span
     background: $clock-bg url(../img/clock_face.svg) no-repeat;
     background-size: cover;
     box-shadow: -2px 2px 0 $shadow-color, inset 0 0 20px rgba($color: #000000, $alpha: 0.5);
-}
 
-.clock::before
-{
-    content: '';
-    position: absolute;
-    top: $top;
-    left: 50%;
-    left: 50%;
-    width: 30%;
-    height: 3%;
-    background: $body-bg;
-    border-radius: 3px;
-    animation: animation-clock 4s linear infinite;
-    transform-origin: left;
-}
+    &:before
+    {
+        @extend .clockwise;
+        width: 30%;
+        animation: animation-clock 4s linear infinite;
+    }
 
-.clock::after
-{
-    content: '';
-    position: absolute;
-    top: $top;
-    left: 50%;
-    left: 50%;
-    width: 20%;
-    height: 3%;
-    background: $body-bg;
-    border-radius: 3px;
-    animation: animation-clock 48s linear infinite;
-    transform-origin: left;
+    &:after
+    {
+        @extend .clockwise;
+        width: 20%;
+        animation: animation-clock 48s linear infinite;
+    }
 }
 
 @keyframes animation-clock
