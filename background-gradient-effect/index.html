@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gradient Background Effect</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./search.css">
+    <script src="./script.js"></script>
+    <script>
+        transformicons.add('.tcon') // add default behavior for all elements with the class .tcon
+                .remove('.tcon-menu--xcross') // remove default behavior for the first icon
+                .add('.tcon-menu--xcross', {
+                    transform: "mouseover",
+                    revert: "mouseout"
+                }); // add new behavior for the first icon
+    </script>
+</head>
+
+<body>
+    <div class="search">
+        <input type="text" name="search" id="search">
+        <button type="button" class="tcon tcon-search--xcross" aria-label="toggle search">
+            <span class="tcon-search__item" aria-hidden="true"></span>
+            <span class="tcon-visuallyhidden">toggle search</span>
+        </button>
+    </div>
+</body>
+
+</html>
