@@ -1,0 +1,84 @@
+$bg : #262626;
+$white: #fff;
+$border: 4px solid $white;
+
+@mixin width-height($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+@mixin absolute-parent($top, $bottom, $left, $right, $x, $y) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    @if ($bottom != "") {
+        bottom: $bottom;
+    }
+    @if ($right != "") {
+        right: $right;
+    }
+    @if ($x != "" && $y != "") {
+        transform: translate($x, $y);
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: $bg;
+}
+
+.bowl {
+    @include absolute-parent(50%, "", 50%, "", -50%, -50%);
+    @include width-height(300px, 300px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border: $border;
+    transform-origin: bottom center;
+    animation: animate-bowl 5s linear infinite;
+    &:before {
+        content: '';
+        @include absolute-parent(-10px, "", 50%, "", -50%, 0);
+        @include width-height(40%, 30px);
+        background: rgb(66,66,66);
+        border: $border;
+        border-radius: 50%;
+    }
+    &:after {
+        content: '';
+        @include absolute-parent(30%, "", 50%, "", -50%, -50%);
+        @include width-height(150px, 80px);
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+    }
+}
+
+.water {
+    @include absolute-parent(50%, 5px, 5px, 5px, "", "");
+    background: rgba(65, 193, 251, 0.5);
+    border-bottom-right-radius: 150px;
+    border-bottom-left-radius: 150px;
+    transform-origin: top center;
+    animation: animate-water 5s linear infinite;
+    &:before {
+        content: '';
+        @include absolute-parent(-10px, "", 0, "", "", "");
+        @include width-height(100%, 20px);
+        border-radius: 50%;
+        background: #1fa4e0;
+    }
+}
+
+.fish {
+    width: 80px;
+    margin-top: 15px;
+    animation: animate-fish 3.6s linear infinite;
+}
+
+.shadow {
+    @include absolute-parent(calc(50% + 150px), "", 50%, "", -50%, -50%);
+    @include width-height(300px, 30px);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    border-radius: 50%;
+}
