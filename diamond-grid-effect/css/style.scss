@@ -1,0 +1,71 @@
+$bg : #000;
+
+.margin-padding-0 {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin width-height($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+@mixin top-left-item($top, $left) {
+    top: $top;
+    left: $left;
+}
+
+@mixin bottom-left-item($bottom, $left) {
+    bottom: $bottom;
+    left: $left;
+}
+
+body {
+    @extend .margin-padding-0;
+    background: $bg;
+}
+
+ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include width-height(600px, 150px);
+    @extend .margin-padding-0;
+
+    li {
+        list-style: none;
+        position: absolute;
+        @include width-height(200px, 200px);
+        background: $bg;
+        margin: -100px;
+        transform: rotate(45deg);
+        transition: .5s;
+        overflow: hidden;
+        opacity: .5;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        .bg {
+            @include width-height(100%, 100%);
+            transform: rotate(-45deg) scale(1.42);
+        }
+
+        @for $i from 0 through 4 {
+            &.item#{$i + 1} {
+                @if (($i + 1) % 2 != 0){
+                    @include top-left-item(0, $i*25%);
+               } @else {
+                    @include bottom-left-item(0, $i*25%);
+               }
+
+               .bg {
+                    background: url(../img/bg#{$i+1}.jpg);
+                    background-size: cover;
+                }
+            }
+        }
+    }
+}
