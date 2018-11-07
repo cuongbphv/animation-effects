@@ -1,0 +1,50 @@
+@import '../../base-scss/base.scss';
+
+@mixin animation-each-child-in-list($n) {
+    @for $i from 0 to $n {
+        $x : random(400) - 200 + px;
+        $y : random(400) - 200 + px;
+        li {
+            &:nth-child(#{$i+1}) {
+                transform: translate($x, $y);
+            }
+        }
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgba($color: #f8d0d3, $alpha: 1.0);
+}
+
+.text-animation {
+    list-style: none;
+    @extend .absolute-center-parent;
+
+    .hidden {
+        opacity: 0;
+    }
+
+    &.hidden {
+        @include animation-each-child-in-list(9);
+    }
+
+    li {
+        display: inline-block;
+        margin-right: 5px;
+        font-family: sans-serif;
+        font-weight: 300;
+        font-size: 5em;
+        color: #70e1e2;
+        opacity: 1;
+        transition: all 2.5s ease;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
