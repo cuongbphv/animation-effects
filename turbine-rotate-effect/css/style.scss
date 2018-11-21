@@ -1,0 +1,72 @@
+@import '../../base-scss/base.scss';
+
+$turbine-from-color: #f1f1f1;
+$turbine-to-color: #bbb;
+
+@mixin custom-each-span ($deg) {
+    transform: rotateX($deg);
+}
+
+@include reformat-body;
+
+.box {
+    position: absolute;
+    top: calc(50% - 150px);
+    left: calc(50% - 100px);
+    transform: perspective(1000px) rotateY(-45deg);
+    @include width-height(200px,300px);
+    transform-style: preserve-3d;
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: -100px;
+        left: 0;
+        @include width-height(100%,50px);
+        background: $white;
+        filter: blur(40px);
+        opacity: 0.5;
+        transform: rotateX(90deg);
+    }
+
+    div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include width-height(100%,100%);
+        transform-style: preserve-3d;
+        animation: animate-rotate 5s linear infinite;
+
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            @include width-height(100%,100%);
+            background: linear-gradient(0deg, $turbine-from-color, $turbine-to-color, $turbine-from-color);
+            border-radius: 20px;
+
+            &:nth-child(1) {
+                @include custom-each-span(0deg);
+            }
+            &:nth-child(2) {
+                @include custom-each-span(45deg);
+            }
+            &:nth-child(3) {
+                @include custom-each-span(-45deg);
+            }
+            &:nth-child(4) {
+                @include custom-each-span(90deg);
+            }
+        }
+    }
+}
+
+@keyframes animate-rotate {
+    0% {
+        transform: perspective(1000px) rotateX(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateX(-359deg);
+    }
+}

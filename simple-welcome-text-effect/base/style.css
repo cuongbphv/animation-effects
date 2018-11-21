@@ -24,48 +24,48 @@ body {
 }
 
 .text-animation.hidden li:nth-child(1) {
-  -webkit-transform: translate(-75px, -73px);
-          transform: translate(-75px, -73px);
+  -webkit-transform: translate(-117px, 198px);
+          transform: translate(-117px, 198px);
 }
 
 .text-animation.hidden li:nth-child(2) {
-  -webkit-transform: translate(184px, -128px);
-          transform: translate(184px, -128px);
+  -webkit-transform: translate(8px, 87px);
+          transform: translate(8px, 87px);
 }
 
 .text-animation.hidden li:nth-child(3) {
-  -webkit-transform: translate(190px, 0px);
-          transform: translate(190px, 0px);
+  -webkit-transform: translate(-22px, 48px);
+          transform: translate(-22px, 48px);
 }
 
 .text-animation.hidden li:nth-child(4) {
-  -webkit-transform: translate(86px, -102px);
-          transform: translate(86px, -102px);
+  -webkit-transform: translate(-62px, 39px);
+          transform: translate(-62px, 39px);
 }
 
 .text-animation.hidden li:nth-child(5) {
-  -webkit-transform: translate(-185px, -14px);
-          transform: translate(-185px, -14px);
+  -webkit-transform: translate(68px, -174px);
+          transform: translate(68px, -174px);
 }
 
 .text-animation.hidden li:nth-child(6) {
-  -webkit-transform: translate(148px, 69px);
-          transform: translate(148px, 69px);
+  -webkit-transform: translate(-11px, -124px);
+          transform: translate(-11px, -124px);
 }
 
 .text-animation.hidden li:nth-child(7) {
-  -webkit-transform: translate(131px, 88px);
-          transform: translate(131px, 88px);
+  -webkit-transform: translate(-59px, 96px);
+          transform: translate(-59px, 96px);
 }
 
 .text-animation.hidden li:nth-child(8) {
-  -webkit-transform: translate(161px, -160px);
-          transform: translate(161px, -160px);
+  -webkit-transform: translate(3px, 72px);
+          transform: translate(3px, 72px);
 }
 
 .text-animation.hidden li:nth-child(9) {
-  -webkit-transform: translate(115px, -55px);
-          transform: translate(115px, -55px);
+  -webkit-transform: translate(-65px, -130px);
+          transform: translate(-65px, -130px);
 }
 
 .text-animation li {

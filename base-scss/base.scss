@@ -1,7 +1,19 @@
+//define color
+$bg-color: #607d8b;
+$white: #fff;
+
 // function to include
 @mixin width-height($w, $h) {
     width: $w;
     height: $h;
+}
+
+@mixin reformat-body {
+    body {
+        margin: 0;
+        padding: 0;
+        background: $bg-color;
+    }
 }
 
 // class to extend
