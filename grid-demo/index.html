@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Grid System Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+
+<body>
+
+    <h1>Document</h1>
+    <p>
+        <a href="http://w3schools.com" target="_blank">http://w3schools.com</a>
+    </p>
+    <p>
+        <a href="https://developer.mozilla.org/vi/docs/Web/CSS/CSS_Grid_Layout/tong_quan_ve_grid_layout"
+            target="_blank">
+            https://developer.mozilla.org/vi/docs/Web/CSS/CSS_Grid_Layout/tong_quan_ve_grid_layout
+        </a>
+    </p>
+
+
+    <div class="wrapper">
+        <div class="one">One</div>
+        <div class="two">Two</div>
+        <div class="three">Three</div>
+        <div class="four">Four</div>
+        <div class="five">Five</div>
+        <div class="six">Six</div>
+    </div>
+
+    <div class="flex-grid">
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+        <div class="col">4</div>
+        <div class="col">5</div>
+        <div class="col">6</div>
+        <div class="col">7</div>
+        <div class="col">8</div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="grid-wrapper">
+            <div class="col-4">
+                <h3><b>Concept:</b></h3>
+                <ul>
+                    <li>
+                        CSS Grid Layout is the most powerful layout system available in CSS.
+                        It is a 2-dimensional system, meaning it can handle both columns and rows,
+                        unlike flexbox which is largely a 1-dimensional system. You work with Grid
+                        Layout by applying CSS rules both to a parent element (which becomes the Grid Container)
+                        and to that element's children (which become Grid Items).
+                    </li>
+                    <li>
+                        CSS Grid Layout (aka "Grid"), is a two-dimensional grid-based layout system
+                        that aims to do nothing less than completely change the way we design grid-based
+                        user interfaces. CSS has always been used to lay out our web pages, but it's
+                        never done a very good job of it. First, we used tables, then floats, positioning
+                        and inline-block, but all of these methods were essentially hacks and left out a
+                        lot of important functionality (vertical centering, for instance). Flexbox helped
+                        out, but it's intended for simpler one-dimensional layouts, not complex two-dimensional
+                        ones (Flexbox and Grid actually work very well together). Grid is the very first CSS
+                        module created specifically to solve the layout problems we've all been hacking our way
+                        around for as long as we've been making websites.
+                    </li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <p class="col-2 d-inline-block">Col-2</p>
+                <p class="col-10 d-inline-block"><a
+                        href="https://css-tricks.com/snippets/css/complete-guide-grid/">Complete Grid System</a></p>
+            </div>
+            <div class="col-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras suscipit ultricies vehicula. Curabitur
+                    iaculis, risus vel egestas pellentesque, magna eros fermentum massa, et eleifend sapien purus id
+                    dui. Pellentesque consectetur imperdiet dui ac tristique. Nulla non egestas dui. Nulla semper diam
+                    est. Morbi tincidunt eros non nisi pretium vehicula. Integer semper vulputate sem eu molestie. Fusce
+                    aliquet viverra est, sit amet blandit nibh tristique commodo. Nulla eget elit in lacus luctus
+                    iaculis et in ipsum. Curabitur et consectetur sapien.</p>
+            </div>
+            <div class="col-12">
+                <div class="caniuse">
+                    <div class="caniuse-header">
+                        <p>This browser support data is from <a href="http://caniuse.com/#feat=css-grid">Caniuse</a>,
+                            which has more detail. A number indicates that browser supports the feature at that version
+                            and up.
+                        </p>
+                    </div>
+                    <div class="caniuse-section">
+                        <h4>Desktop</h4>
+                        <table class="browser-support-table">
+                            <thead>
+                                <tr>
+                                    <th class="chrome">
+                                        <span>Chrome</span>
+                                    </th>
+                                    <th class="opera">
+                                        <span>Opera</span>
+                                    </th>
+                                    <th class="firefox"><span>Firefox</span></th>
+                                    <th class="ie"><span>IE</span></th>
+                                    <th class="edge"><span>Edge</span></th>
+                                    <th class="safari"><span>Safari</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="y yep" title="Chrome - " data-browser-name="Chrome"><span
+                                            class="caniuse-agents-version version">57</span></td>
+                                    <td class="y yep" title="Opera - " data-browser-name="Opera"><span
+                                            class="caniuse-agents-version version">44</span></td>
+                                    <td class="y yep" title="Firefox - " data-browser-name="Firefox"><span
+                                            class="caniuse-agents-version version">52</span></td>
+                                    <td class="a yep-nope yep-nope-partial" title="IE - " data-browser-name="IE"><span
+                                            class="caniuse-agents-version version">11*</span></td>
+                                    <td class="y yep" title="Edge - " data-browser-name="Edge"><span
+                                            class="caniuse-agents-version version">16</span></td>
+                                    <td class="y yep" title="Safari - " data-browser-name="Safari"><span
+                                            class="caniuse-agents-version version">10.1</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="caniuse-section">
+                        <h4>Mobile / Tablet</h4>
+                        <table class="browser-support-table">
+                            <thead>
+                                <tr>
+                                    <th class="ios_saf"><span>iOS Safari</span></th>
+                                    <th class="op_mob"><span>Opera Mobile</span></th>
+                                    <th class="op_mini"><span>Opera Mini</span></th>
+                                    <th class="android"><span>Android</span></th>
+                                    <th class="and_chr"><span>Android Chrome</span></th>
+                                    <th class="and_ff"><span>Android Firefox</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="y yep" title="iOS Safari - " data-browser-name="iOS Safari"><span
+                                            class="caniuse-agents-version version">10.3</span></td>
+                                    <td class="y yep" title="Opera Mobile - " data-browser-name="Opera Mobile"><span
+                                            class="caniuse-agents-version version">46</span></td>
+                                    <td class="n nope" title="Opera Mini - " data-browser-name="Opera Mini"><span
+                                            class="caniuse-agents-version version">No</span></td>
+                                    <td class="y yep" title="Android - " data-browser-name="Android"><span
+                                            class="caniuse-agents-version version">67</span></td>
+                                    <td class="y yep" title="Android Chrome - " data-browser-name="Android Chrome"><span
+                                            class="caniuse-agents-version version">71</span></td>
+                                    <td class="y yep" title="Android Firefox - " data-browser-name="Android Firefox">
+                                        <span class="caniuse-agents-version version">64</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
